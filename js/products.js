@@ -1,30 +1,30 @@
 // $(document).ready(function() {
 //     // URL of the API you want to fetch
-//     const apiUrl =  'https://api.evertransit.whipclient.io/internal-api/v1/products';
-//     const username = 'et_signup_client';
-//     const password = 'TejmcySXPJix2MvaF1k3E0';
-//     var products = {};
-//     var base64Credentials = btoa(username + ':' + password);
+    const apiUrl =  'https://api.evertransit.whipclient.io/internal-api/v1/products';
+    const username = 'et_signup_client';
+    const password = 'TejmcySXPJix2MvaF1k3E0';
+    var products = {};
+    var base64Credentials = btoa(username + ':' + password);
    
-//    getProducts=function(){
-//         return $.ajax({
-//              url: apiUrl,
-//              type: "GET",
-//              dataType: "json",
-//              headers: {
-//                  "Authorization": "Basic ZXRfc2lnbnVwX2NsaWVudDpFeHFJOCElNWkrVzMjTTJV"
-//              },
-//              success: function(response) {
-//                  // Handle successful response
-//                  return response;
-//              },
-//              error: function(jqXHR, textStatus, errorThrown) {
-//                  // Handle error response
-//                  console.log(errorThrown);
-//                  return [];
-//              }
-//          });
-//      };    
+   getProducts=function(){
+        return $.ajax({
+             url: apiUrl,
+             type: "GET",
+             dataType: "json",
+             headers: {
+                 "Authorization": "Basic ZXRfc2lnbnVwX2NsaWVudDpFeHFJOCElNWkrVzMjTTJV"
+             },
+             success: function(response) {
+                 // Handle successful response
+                 return response;
+             },
+             error: function(jqXHR, textStatus, errorThrown) {
+                 // Handle error response
+                 console.log(errorThrown);
+                 return [];
+             }
+         });
+     };    
 //      function addContentToDiv() {
 //         var div = document.getElementById("dynamic_pricing");
 //         // Check if the div exists
