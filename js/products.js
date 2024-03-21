@@ -52,6 +52,11 @@ document.addEventListener("DOMContentLoaded", function() {
         var div = document.getElementById("dynamic_pricing");
         // Check if the div exists
         if (div) {
+            getProducts().then((data)=>
+                         {
+                            const text= JSON.stringify(data, null, 2);
+                            div.innerHTML = text;
+                        });
             // Add content to the div
             div.innerHTML = "New content added to the div!";
         } else {
