@@ -1,0 +1,18 @@
+{
+    "folders": [
+        {
+            "name": "choreo-project-root",
+            "path": "."
+        },
+        {
+            "name": "html-sample-for-trans",
+            "path": "repos\\prasanna-smartdata\\html-sample"
+        }
+    ],
+    "metadata": {
+        "choreo": {
+            "projectID": "0e512a72-5cd7-4f9c-a08e-2586dcbcaec0",
+            "orgId": "36147"
+        }
+    }
+}
