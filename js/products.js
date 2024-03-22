@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     const products= JSON.stringify(sortedProducts, null, 2);
                    
                     data.map(obj=>obj.features).forEach(element => {
-                        element.forEach(text=>setOfFeatures.add('<div class="table-cell-2">'+ text +'</div>'))
+                        element.forEach(text=>setOfFeatures.add('<div class="table-cell-2"> <div class="tooltip-text">'+ text +'</div></div>'))
                     });
                     // Convert Set to an array using spread operator
                     const setToArray = [...setOfFeatures];
