@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Convert array to string
                     const setToString = setOfFeatures.join('');      
                   
-                    div.innerHTML = createHtml(commonFeatures, products);
+                    div.innerHTML = createHtml(setToString, products);
                 });
             
         } else {
@@ -73,7 +73,7 @@ function findCommonFeatures(arrays) {
     });
 }
 function createHtml(features,data){
-    var html="<div class='pricing-table-wrapper'> <div class='pricing-2 width:20%; '>";
+    var html="<div class='pricing-table-wrapper'> <div class='pricing-2'>";
     var featuresHtml='<div class="table-cell-2">';
     featuresHtml+='<div class="table-header-2">All Pricing Includes</div>';
     featuresHtml+='<div class="w-embed">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
