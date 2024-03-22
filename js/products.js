@@ -25,25 +25,7 @@
              }
          });
      };    
-//      function addContentToDiv() {
-//         var div = document.getElementById("dynamic_pricing");
-//         // Check if the div exists
-//         if (div) {
-//             // Add content to the div
-//             getProducts().then((data)=>
-//              {
-//                 const text= JSON.stringify(data, null, 2);
-//                 div.innerHTML = text;
-//             });
-           
-//         } else {
-//             console.error("Div not found.");
-//         }
-//     }
-//     // Call the function to add content on page load
-//     addContentToDiv();
 
-// });
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -54,25 +36,29 @@ document.addEventListener("DOMContentLoaded", function() {
         if (div) {
             getProducts().then((data)=>
                 {
-                    const setOfFeatures = new Set()
+                    const setOfFeatures =[];
                     const sortedProducts = data.sort(
                         (a, b) => a.prices.recurringFee - b.prices.recurringFee,
                     );
                     const products= JSON.stringify(sortedProducts, null, 2);
                    
-                    data.map(obj=>obj.features).forEach(element => {
-                        element.forEach(text=>setOfFeatures.add('<div class="table-cell-2"> <div class="tooltip-text">'+ text +'</div></div>'))
+                  
+                    const arraysOfFeatures = data.map(obj => obj.features);
+
+                    const commonFeatures = findCommonFeatures(arraysOfFeatures);
+
+                    console.log(commonFeatures) 
+
+                    commonFeatures.forEach(element => {
+                        setOfFeatures.push('<div class="table-cell-2"> <div class="tooltip-text">'+ element +'</div></div>');
                     });
-                    // Convert Set to an array using spread operator
-                    const setToArray = [...setOfFeatures];
 
                     // Convert array to string
-                    const setToString = setToArray.join('');      
-                    console.log(setToString) 
-                    div.innerHTML = createHtml(setToString, products);
+                    const setToString = setOfFeatures.join('');      
+                  
+                    div.innerHTML = createHtml(commonFeatures, products);
                 });
-            // Add content to the div
-           // div.innerHTML = "New content added to the div!";
+            
         } else {
             console.error("Div not found.");
         }
@@ -81,14 +67,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function to add content on page load
     addContentToDiv();
 });
-
+function findCommonFeatures(arrays) {
+    return arrays.reduce((accumulator, currentValue) => {
+        return accumulator.filter(value => currentValue.includes(value));
+    });
+}
 function createHtml(features,data){
     var html="<div class='pricing-table-wrapper'> <div class='pricing-2 width:20%; '>";
     var featuresHtml='<div class="table-cell-2">';
-    featuresHtml+='<div class="table-header-2">Subscription</div>';
+    featuresHtml+='<div class="table-header-2">All Pricing Includes</div>';
     featuresHtml+='<div class="w-embed">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
     featuresHtml+=features;
     html+=featuresHtml;
     var endHtml=html+ "</div><div></div></div>";
     return endHtml;
+}
+
+function createPlanHtml(){
+
 }
