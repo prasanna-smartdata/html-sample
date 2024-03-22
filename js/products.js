@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     div.innerHTML = createHtml(setToString, products);
                 });
             // Add content to the div
-            div.innerHTML = "New content added to the div!";
+           // div.innerHTML = "New content added to the div!";
         } else {
             console.error("Div not found.");
         }
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function createHtml(features,data){
     var html="<div class='pricing-table-wrapper'> <div class='w-layout-grid pricing-2'>";
     var featuresHtml='<div class="table-cell-2">';
-    featuresHtml+='<div class="price-title table-header-2">Subscription</div>';
+    featuresHtml+='<div class="price-title">Subscription</div>';
     featuresHtml+='<div class="w-embed">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
     featuresHtml+=features;
     html+=featuresHtml;
