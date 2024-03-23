@@ -90,10 +90,10 @@ function createPlanHtml(product,commonFeatures){
     const features=getValuesNotInArray(product.features,commonFeatures);
     var html="<div class='table-header-2'>";
     html+='<div class="table-cell-2">'+product.name+'</div>';
-    html+='<div class="w-embed">'+`Setup Fee - ${product.prices.setupFee}`+'</div>';
-    html+='<div class="w-embed">'+`${product.prices.overage.limit} rides / month`+'</div>';
-    html+='<div class="w-embed">'+`Then ${product.prices.overage.fee} / ride`+'</div>';   
-    const featureString=features.map(feature=>'<div class="w-embed">'+ feature+'</div>')
+    html+='<div>'+`Setup Fee - ${product.prices.setupFee}`+'</div>';
+    html+='<div>'+`${product.prices.overage.limit} rides / month`+'</div>';
+    html+='<div>'+`Then ${product.prices.overage.fee} / ride`+'</div>';   
+    const featureString=features.map(feature=>'<div>'+ feature+'</div>')
     html+=featureString.join('');
     
     html+='</div>';
