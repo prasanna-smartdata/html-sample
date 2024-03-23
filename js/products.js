@@ -74,7 +74,7 @@ function findCommonFeatures(arrays) {
 }
 function createHtml(features,products,commonFeatures){
     console.log(products)
-    var html="<div class='pricing-table-wrapper'> <div class='pricing-2'>";
+    var html="<div class='pricing-table-wrapper'> <div class='w-layout-grid pricing-2'>";
     // var featuresHtml='<div class="table-cell-2">';
     // featuresHtml+='<div class="table-header-2">All Pricing Includes</div>';
     // featuresHtml+='<div class="body-text-2 m">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
