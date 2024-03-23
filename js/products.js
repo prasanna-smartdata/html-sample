@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Convert array to string
                     const setToString = setOfFeatures.join('');      
                   
-                    div.innerHTML = createHtml(setToString, sortedProducts);
+                    div.innerHTML = createHtml(setToString, sortedProducts,commonFeatures);
                 });
             
         } else {
@@ -72,23 +72,35 @@ function findCommonFeatures(arrays) {
         return accumulator.filter(value => currentValue.includes(value));
     });
 }
-function createHtml(features,data){
+function createHtml(features,products,commonFeatures){
+    console.log(products)
     var html="<div class='pricing-table-wrapper'> <div class='pricing-2'>";
-    var featuresHtml='<div class="table-cell-2">';
-    featuresHtml+='<div class="table-header-2">All Pricing Includes</div>';
-    featuresHtml+='<div class="w-embed">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
-    featuresHtml+=features;
-    html+=featuresHtml;
-    html+=data.map(item=>createPlanHtml(item));
+    // var featuresHtml='<div class="table-cell-2">';
+    // featuresHtml+='<div class="table-header-2">All Pricing Includes</div>';
+    // featuresHtml+='<div class="w-embed">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
+    // featuresHtml+=features;
+    html+=products.map(product=>createPlanHtml(product,commonFeatures)).join('');
+   // html+=featuresHtml;
+
     var endHtml=html+ "</div></div>";
     return endHtml;
 }
 
-function createPlanHtml(product){
+function createPlanHtml(product,commonFeatures){
+    const features=getValuesNotInArray(product.features,commonFeatures);
     var html="<div class='table-header-2'>";
     html+='<div class="table-cell-2">'+product.name+'</div>';
-    html+='<div class="table-cell-2">'+`Setup Fee - $${product.prices.setupFee}`+'</div>';
+    html+='<div class="w-embed">'+`Setup Fee - ${product.prices.setupFee}`+'</div>';
+    html+='<div class="w-embed">'+`${product.prices.overage.limit} rides / month`+'</div>';
+    html+='<div class="w-embed">'+`Then ${product.prices.overage.fee} / ride`+'</div>';   
+    const featureString=features.map(feature=>'<div class="w-embed">'+ feature+'</div>')
+    html+=featureString.join('');
+    
     html+='</div>';
     return html;
 
+}
+
+function getValuesNotInArray(arr1, arr2) {
+    return arr1.filter(item => arr2.indexOf(item) === -1);
 }
