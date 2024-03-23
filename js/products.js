@@ -88,8 +88,8 @@ function createHtml(features,products,commonFeatures){
 
 function createPlanHtml(product,commonFeatures){
     const features=getValuesNotInArray(product.features,commonFeatures);
-    var html="<div class='table-header-2'>";
-    html+='<div class="table-cell-2">'+product.name+'</div>';
+    var html="<div><div class='table-header-2'>";
+    html+='<div class="table-cell-2">'+product.name+'</div></div>';
     html+='<div class="body-text-2 m">'+`Setup Fee - ${product.prices.setupFee}`+'</div>';
     html+='<div class="body-text-2 m">'+`${product.prices.overage.limit} rides / month`+'</div>';
     html+='<div class="body-text-2 m">'+`Then ${product.prices.overage.fee} / ride`+'</div>';   
