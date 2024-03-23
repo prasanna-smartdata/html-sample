@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     const commonFeatures = findCommonFeatures(arraysOfFeatures);
 
-                    console.log(commonFeatures) 
+                    console.log(sortedProducts) 
 
                     commonFeatures.forEach(element => {
                         setOfFeatures.push('<div class="table-cell-2"> <div class="tooltip-text">'+ element +'</div></div>');
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Convert array to string
                     const setToString = setOfFeatures.join('');      
                   
-                    div.innerHTML = createHtml(setToString, products);
+                    div.innerHTML = createHtml(setToString, sortedProducts);
                 });
             
         } else {
@@ -79,10 +79,16 @@ function createHtml(features,data){
     featuresHtml+='<div class="w-embed">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
     featuresHtml+=features;
     html+=featuresHtml;
-    var endHtml=html+ "</div><div></div></div>";
+    html+=data.map(item=>createPlanHtml(item));
+    var endHtml=html+ "</div></div>";
     return endHtml;
 }
 
-function createPlanHtml(){
+function createPlanHtml(product){
+    var html="<div class='table-header-2'>";
+    html+='<div class="table-cell-2">'+product.name+'</div>';
+    html+='<div class="table-cell-2">'+`Setup Fee - $${product.prices.setupFee}`+'</div>';
+    html+='</div>';
+    return html;
 
 }
