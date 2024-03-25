@@ -65,6 +65,9 @@ svg:not(:root) {
     width: 100%;
 }
 
+.pricing-2{
+    width: 20% !important;
+}
 ::selection {
     background: #d8edff;
     text-shadow: none;
