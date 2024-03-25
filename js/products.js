@@ -82,7 +82,7 @@ function createHtml(features,products,commonFeatures){
     html+= '<div>' +products.map(product=>createPlanHtml(product,commonFeatures)).join('') +'</div>';
   
 
-    var endHtml=html+ "</div></div>";
+    var endHtml=html+ "</div>";
     return endHtml;
 }
 
