@@ -73,3 +73,8 @@ svg:not(:root) {
     text-shadow: none;
     color: #3e3e3c;
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
