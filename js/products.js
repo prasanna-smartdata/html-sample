@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     const commonFeatures = findCommonFeatures(arraysOfFeatures);
 
-                    console.log(sortedProducts) 
-
                     commonFeatures.forEach(element => {
                         setOfFeatures.push('<div class="table-cell-2"> <div class="tooltip-text">'+ element +'</div></div>');
                     });
@@ -75,14 +73,14 @@ function findCommonFeatures(arrays) {
     });
 }
 function createHtml(features,products,commonFeatures){
-    console.log(products)
     var html="<div class='pricing-table-wrapper'> <div class='w-layout-grid pricing-2'>";
-    // var featuresHtml='<div class="table-cell-2">';
-    // featuresHtml+='<div class="table-header-2">All Pricing Includes</div>';
-    // featuresHtml+='<div class="body-text-2 m">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
-    // featuresHtml+=features;
+    var featuresHtml='<div class="table-cell-2">';
+    featuresHtml+='<div class="table-header-2">All Pricing Includes</div>';
+    featuresHtml+='<div class="body-text-2 m">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
+    featuresHtml+=features;
+    html+=featuresHtml;
     html+=products.map(product=>createPlanHtml(product,commonFeatures)).join('');
-   // html+=featuresHtml;
+  
 
     var endHtml=html+ "</div></div>";
     return endHtml;
@@ -93,17 +91,13 @@ function createPlanHtml(product,commonFeatures){
     var html="<div class='cHQdJ'><label class='sc-gwZsXD gcIrqH'><div class='jlhVkr'>";
     html+='<span class="hemwwv">'+product.name+'</span>';
     html+='<span><span class="sc-eIVEXM dyJMbD">$'+product.prices.setupFee+'<span class="sc-RpuvT ebTNMh"> / Month</span></span>';
-    html+='<li class="sc-iipuKH dHKZej"><svg class="sc-bPzAnn flUzcH" fill="currentColor" width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title></title><g id="Variant-3" stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.6506722,2.00848715 L5.90623037,9.6551278 C5.67389058,9.88453999 5.36890372,10 5.0639168,10 C4.75892988,10 4.45394301,9.88453999 4.22160323,9.6551278 L0.349491416,5.83180748 C-0.116497139,5.37190617 -0.116497139,4.62830919 0.349491416,4.16840789 C0.81526177,3.70829114 1.56813,3.70829114 2.03411855,4.16840789 L5.0639168,7.16002843 L11.9660451,0.345087565 C12.4318154,-0.115029188 13.1846836,-0.115029188 13.6506722,0.345087565 C14.1164426,0.804988866 14.1164426,1.54837039 13.6506722,2.00848715 Z" id="checkmark"></path></g></svg><span class="sc-nUItV fJlsIf"><b class="sc-gsxalj ePltAh">'+`${product.prices.overage.limit} rides / month`+'</span></li>';
-    html+='<li class="sc-iipuKH dHKZej"><svg class="sc-bPzAnn flUzcH" fill="currentColor" width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title></title><g id="Variant-3" stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.6506722,2.00848715 L5.90623037,9.6551278 C5.67389058,9.88453999 5.36890372,10 5.0639168,10 C4.75892988,10 4.45394301,9.88453999 4.22160323,9.6551278 L0.349491416,5.83180748 C-0.116497139,5.37190617 -0.116497139,4.62830919 0.349491416,4.16840789 C0.81526177,3.70829114 1.56813,3.70829114 2.03411855,4.16840789 L5.0639168,7.16002843 L11.9660451,0.345087565 C12.4318154,-0.115029188 13.1846836,-0.115029188 13.6506722,0.345087565 C14.1164426,0.804988866 14.1164426,1.54837039 13.6506722,2.00848715 Z" id="checkmark"></path></g></svg><span class="sc-nUItV fJlsIf"><b class="sc-gsxalj ePltAh">'+`Then ${product.prices.overage.fee} / ride`+'</span></li>';
+    html+='<li class="sc-iipuKH dHKZej"><svg class="sc-bPzAnn flUzcH" fill="currentColor" width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title></title><g id="Variant-3" stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.6506722,2.00848715 L5.90623037,9.6551278 C5.67389058,9.88453999 5.36890372,10 5.0639168,10 C4.75892988,10 4.45394301,9.88453999 4.22160323,9.6551278 L0.349491416,5.83180748 C-0.116497139,5.37190617 -0.116497139,4.62830919 0.349491416,4.16840789 C0.81526177,3.70829114 1.56813,3.70829114 2.03411855,4.16840789 L5.0639168,7.16002843 L11.9660451,0.345087565 C12.4318154,-0.115029188 13.1846836,-0.115029188 13.6506722,0.345087565 C14.1164426,0.804988866 14.1164426,1.54837039 13.6506722,2.00848715 Z" id="checkmark"></path></g></svg><span class="sc-nUItV fJlsIf"><b class="sc-gsxalj ePltAh">'+`${product.prices.overage.limit} rides / month`+'</b></span></li>';
+    html+='<li class="sc-iipuKH dHKZej"><svg class="sc-bPzAnn flUzcH" fill="currentColor" width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title></title><g id="Variant-3" stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.6506722,2.00848715 L5.90623037,9.6551278 C5.67389058,9.88453999 5.36890372,10 5.0639168,10 C4.75892988,10 4.45394301,9.88453999 4.22160323,9.6551278 L0.349491416,5.83180748 C-0.116497139,5.37190617 -0.116497139,4.62830919 0.349491416,4.16840789 C0.81526177,3.70829114 1.56813,3.70829114 2.03411855,4.16840789 L5.0639168,7.16002843 L11.9660451,0.345087565 C12.4318154,-0.115029188 13.1846836,-0.115029188 13.6506722,0.345087565 C14.1164426,0.804988866 14.1164426,1.54837039 13.6506722,2.00848715 Z" id="checkmark"></path></g></svg><span class="sc-nUItV fJlsIf"><b class="sc-gsxalj ePltAh">'+`Then ${product.prices.overage.fee} / ride`+'</b></span></li>';
+    html+='</span>'   
+    const featureString=features.map(feature=>buildLiField(feature))
+    html+=featureString.join('');
     
-    html+='</span>'
-    // html+='<div class="body-text-2 m">'+`Setup Fee - ${product.prices.setupFee}`+'</div>';
-    // html+='<div class="body-text-2 m">'+`${product.prices.overage.limit} rides / month`+'</div>';
-    // html+='<div class="body-text-2 m">'+`Then ${product.prices.overage.fee} / ride`+'</div>';   
-    // const featureString=features.map(feature=>'<div class="body-text-2 m">'+ feature+'</div>')
-    // html+=featureString.join('');
-    
-    html+='</label></div>';
+    html+='</div></label></div>';
     return html;
 
 }
@@ -120,5 +114,9 @@ function loadCSS(filename) {
     document.head.appendChild(link);
 }
 
+function buildLiField(liText){
+    return '<li class="sc-iipuKH dHKZej"><svg class="sc-bPzAnn flUzcH" fill="currentColor" width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title></title><g id="Variant-3" stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.6506722,2.00848715 L5.90623037,9.6551278 C5.67389058,9.88453999 5.36890372,10 5.0639168,10 C4.75892988,10 4.45394301,9.88453999 4.22160323,9.6551278 L0.349491416,5.83180748 C-0.116497139,5.37190617 -0.116497139,4.62830919 0.349491416,4.16840789 C0.81526177,3.70829114 1.56813,3.70829114 2.03411855,4.16840789 L5.0639168,7.16002843 L11.9660451,0.345087565 C12.4318154,-0.115029188 13.1846836,-0.115029188 13.6506722,0.345087565 C14.1164426,0.804988866 14.1164426,1.54837039 13.6506722,2.00848715 Z" id="checkmark"></path></g></svg><span class="sc-nUItV fJlsIf"><b class="sc-gsxalj ePltAh">'+liText+'</b></span></li>';
+     
+}
 // Example usage:
 loadCSS("css/styles.css");

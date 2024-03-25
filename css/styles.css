@@ -60,3 +60,13 @@ svg:not(:root) {
     align-items: center;
     margin-bottom: 12px;
 }
+.ePltAh {
+    font-family: "Lato Bold", Arial, sans-serif;
+    width: 100%;
+}
+
+::selection {
+    background: #d8edff;
+    text-shadow: none;
+    color: #3e3e3c;
+}
