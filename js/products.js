@@ -86,9 +86,7 @@ function createHtml(features,products,commonFeatures){
 
 function createPlanHtml(product,commonFeatures){
     const features=getValuesNotInArray(product.features,commonFeatures);
-    var html='<div >';
-
-    html+="<div class='cHQdJ'><label class='sc-gwZsXD gcIrqH' style='height: 100%;'><div class='jlhVkr'>";
+    var html="<div class='cHQdJ'><label class='sc-gwZsXD gcIrqH' style='height: 100%;'><div class='jlhVkr'>";
     html+='<span class="sc-jjgyjb hemwwv">'+product.name+'</span>';
     html+='<span><span class="sc-eIVEXM dyJMbD">$'+product.prices.setupFee+'<span class="sc-RpuvT ebTNMh"> / Month</span></span>';
     html+='<li class="sc-iipuKH dHKZej"><svg class="sc-bPzAnn flUzcH" fill="currentColor" width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title></title><g id="Variant-3" stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.6506722,2.00848715 L5.90623037,9.6551278 C5.67389058,9.88453999 5.36890372,10 5.0639168,10 C4.75892988,10 4.45394301,9.88453999 4.22160323,9.6551278 L0.349491416,5.83180748 C-0.116497139,5.37190617 -0.116497139,4.62830919 0.349491416,4.16840789 C0.81526177,3.70829114 1.56813,3.70829114 2.03411855,4.16840789 L5.0639168,7.16002843 L11.9660451,0.345087565 C12.4318154,-0.115029188 13.1846836,-0.115029188 13.6506722,0.345087565 C14.1164426,0.804988866 14.1164426,1.54837039 13.6506722,2.00848715 Z" id="checkmark"></path></g></svg><span class="sc-nUItV fJlsIf"><b class="sc-gsxalj ePltAh">'+`${product.prices.overage.limit} rides / month`+'</b></span></li>';
@@ -97,7 +95,7 @@ function createPlanHtml(product,commonFeatures){
     const featureString=features.map(feature=>buildLiField(feature))
     html+=featureString.join('');
     
-    html+='</div></label></div><div class="table-cell-2"><a href="https://signup.evertransit.com/" class="button-fluid-2 medium w-inline-block"><div class="button-text-2">Get started</div></a></div></div>';
+    html+='</div><a href="https://signup.evertransit.com/" class="button-fluid-2 medium w-inline-block"><div class="button-text-2">Get started</div></a></label></div>';
     return html;
 
 }
