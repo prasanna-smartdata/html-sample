@@ -80,8 +80,6 @@ function createHtml(features,products,commonFeatures){
     featuresHtml+=features+"</div>";
     html+=featuresHtml;
     html+= '<div class="card-game__cards"><button class="left scrollbutton" onclick="leftScroll()">&lt;</button><ul class="card-game__cards-list">' +products.map(product=>createPlanHtml(product,commonFeatures)).join('') +'</ul> <button class="right scrollbutton" onclick="rightScroll()">&gt;</button></div>';
-  
-
     var endHtml=html+ "</div>";
     return endHtml;
 }

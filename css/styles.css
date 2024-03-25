@@ -1,7 +1,7 @@
 .cHQdJ {
    
     margin: 0px 0.25rem 0.25rem;
-    height: 100%;
+    height: 100% !important;
 }
 
 .gcIrqH {
@@ -112,8 +112,7 @@ svg:not(:root) {
 
 .card-game__cards ul.card-game__cards-list {
     display: flex;
-    width: 100%;
-    height: auto;
+    width: 100%;   
     flex-wrap: nowrap;
     overflow-x: hidden;
     overflow-y: hidden;
