@@ -79,7 +79,7 @@ function createHtml(features,products,commonFeatures){
     featuresHtml+='<div class="body-text-2 m">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
     featuresHtml+=features+"</div>";
     html+=featuresHtml;
-    html+= '<div>' +products.map(product=>createPlanHtml(product,commonFeatures)).join('') +'</div>';
+    html+= '<div class="items">' +products.map(product=>createPlanHtml(product,commonFeatures)).join('') +'</div>';
   
 
     var endHtml=html+ "</div>";
