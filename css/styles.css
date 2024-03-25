@@ -1,5 +1,5 @@
 .cHQdJ {
-    position: relative;
+   
     margin: 0px 0.25rem 0.25rem;
 }
 
@@ -19,8 +19,7 @@
     margin-bottom: 12px;
     padding: 24px 20px;
     border-radius: 12px;
-    background-color: rgb(255, 255, 255);
-    position: relative;
+    background-color: rgb(255, 255, 255);    
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
@@ -66,7 +65,7 @@ svg:not(:root) {
 }
 
 .pricing-2{
-    width: 20% !important;
+    min-width: 25% !important;
 }
 ::selection {
     background: #d8edff;
@@ -80,4 +79,42 @@ svg:not(:root) {
 }
 .items{
     display: flex;
+}
+
+.right {
+    right: 2rem;
+}
+.left {
+    left: 2rem;
+
+}
+.card-game__cards {
+    padding: 5em 0;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+.card-game__cards .scrollbutton {
+    background-color: transparent;   
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #191142;
+    font-size: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 100%;
+    border: 3.5px solid #191142;
+}
+
+.card-game__cards ul.card-game__cards-list {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    list-style: none;
 }
