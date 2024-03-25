@@ -73,16 +73,16 @@ function findCommonFeatures(arrays) {
     });
 }
 function createHtml(features,products,commonFeatures){
-    var html="<div class='pricing-table-wrapper flex flex-row'><div class='w-layout-grid'> <div class= 'pricing-2'>";
+    var html="<div class='pricing-table-wrapper flex flex-row'><div class= 'pricing-2'>";
     var featuresHtml='<div class="table-cell-2">';
     featuresHtml+='<div class="table-header-2">All Pricing Includes</div>';
     featuresHtml+='<div class="body-text-2 m">  <style> html.w-mod-js *[data-ix="tooltip-hover"], .tooltip-trigger { display: flex !important; }</style>  </div></div>';
     featuresHtml+=features+"</div>";
     html+=featuresHtml;
-    html+=products.map(product=>createPlanHtml(product,commonFeatures)).join('');
+    html+= '<div>' +products.map(product=>createPlanHtml(product,commonFeatures)).join('') +'</div>';
   
 
-    var endHtml=html+ "</div></div></div>";
+    var endHtml=html+ "</div></div>";
     return endHtml;
 }
 
