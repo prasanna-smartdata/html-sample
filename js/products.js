@@ -97,7 +97,7 @@ function createPlanHtml(product,commonFeatures){
     const featureString=features.map(feature=>buildLiField(feature))
     html+=featureString.join('');
     
-    html+='</div></label></div></div>';
+    html+='</div></label></div><div class="table-cell-2"><a href="https://signup.evertransit.com/" class="button-fluid-2 medium w-inline-block"><div class="button-text-2">Get started</div></a></div></div>';
     return html;
 
 }
