@@ -71,14 +71,11 @@ svg:not(:root) {
     width: 100%;
 }
 
-.pricing-2{
-    min-width: 25% !important;
-}
-::selection {
+/* ::selection {
     background: #d8edff;
     text-shadow: none;
     color: #3e3e3c;
-}
+} */
 
 .flex-container {
     display: flex;
@@ -102,6 +99,7 @@ svg:not(:root) {
     position: relative;
 }
 .pricing-2{
+    min-width: 25% !important;
     margin: 2px;
     border-radius: 25px;
     border: 2px solid #73AD21;
