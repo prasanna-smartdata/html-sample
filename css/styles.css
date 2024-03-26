@@ -85,13 +85,6 @@ svg:not(:root) {
     display: flex;
 }
 
-.right {
-    right: 2rem;
-}
-.left {
-    left: 2rem;
-
-}
 .card-game__cards {
     padding: 1em 0;
     overflow: hidden;
