@@ -24,7 +24,11 @@
     background-color: rgb(255, 255, 255);    
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
-
+.container-31 {
+   
+    padding-left: 12px !important; 
+    padding-right: 12px !important; 
+}
 .hemwwv {
     font-size: 18px;
     font-weight: normal !important;
@@ -96,6 +100,12 @@ svg:not(:root) {
     overflow: hidden;
     display: flex;
     position: relative;
+}
+.pricing-2{
+    margin: 2px;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 10px;
 }
 
 .card-game__cards .scrollbutton {
