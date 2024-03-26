@@ -89,7 +89,7 @@ svg:not(:root) {
     right: 1rem;
 }
 .left {
-    left: 1rem;
+    left: 0.5rem;
 
 }
 .card-game__cards {
@@ -105,6 +105,11 @@ svg:not(:root) {
     border: 2px solid #73AD21 !important;
     padding: 10px !important;
 }
+
+.button-fluid-2 , .medium.button-fluid-2{
+    margin-right: auto;
+}
+
 
 .card-game__cards .scrollbutton {
     background-color: transparent;   
