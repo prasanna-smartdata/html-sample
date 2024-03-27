@@ -12,7 +12,7 @@
     -webkit-box-align: center;
     align-items: center;
 }
-.jlhVkr {
+/* .jlhVkr {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -25,7 +25,7 @@
     border: 1px solid green;
     background-color: rgb(255, 255, 255);    
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
-}
+} */
 .container-31 {
    
     padding-left: 12px !important; 
@@ -136,7 +136,7 @@ label {
     border: 1.5px solid #191142;
 }
 
-.card-game__cards ul.card-game__cards-list {
+/* .card-game__cards ul.card-game__cards-list {
     display: flex;
     width: 92%;   
     flex-wrap: nowrap;
@@ -145,8 +145,69 @@ label {
     scroll-behavior: smooth;
     list-style: none;
     padding: 0px;
-    /* margin-left: 4rem;
-    margin-right: 4.5rem; */
+    margin-left: 4rem;
+    margin-right: 4.5rem;
+} */
+
+
+@media only screen and (max-width: 768px) {
+    .card-game__cards ul.card-game__cards-list {
+        display: flex;
+        width: 92%;   
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        list-style: none;
+        padding: 0px;
+        /* margin-left: 4rem;
+        margin-right: 4.5rem; */
+    }
+
+    .jlhVkr {
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        height: 100%;   
+        margin-left: 4px;
+        margin-bottom: 12px;
+        padding: 12px 20px;
+        border-radius: 12px;
+        outline-width: thin;
+        border: 1px solid green;
+        background-color: rgb(255, 255, 255);    
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .card-game__cards ul.card-game__cards-list {
+        display: flex;
+        width: 92%;   
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        list-style: none;
+        padding: 0px;
+        margin-left: 4rem;
+        margin-right: 4.5rem;
+    }
+
+    .jlhVkr {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        height: 100%;   
+        margin-right: 12px;
+        margin-bottom: 12px;
+        padding: 12px 20px;
+        border-radius: 12px;
+        outline-width: thin;
+        border: 1px solid green;
+        background-color: rgb(255, 255, 255);    
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+    }
 }
 .features
 {

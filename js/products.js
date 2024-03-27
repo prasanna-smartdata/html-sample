@@ -169,13 +169,14 @@ function isMobileDevice () {
 var ImageIndex = 0
 function swipe (event, direction) {
   if (!isMobileDevice()) return
+  console.log('in mobile')
   var midpoint = Math.floor(screen.width / 2)
   var px = event.pageX
   var items = document.getElementsByClassName('cHQdJ')
   var itemActive = items[ImageIndex]
   if (direction === 'left') {
     if (ImageIndex == items.length - 1) return
-    itemActive.style.marginLeft = '-92%'
+    itemActive.style.marginLeft = '-100%'
     itemActive.style.transition = '1s '
     ImageIndex = ImageIndex < items.length - 1 ? ImageIndex + 1 : ImageIndex
   } else {
