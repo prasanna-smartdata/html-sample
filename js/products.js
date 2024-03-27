@@ -131,14 +131,22 @@ function buildLiField (liText) {
 
 function leftScroll () {
   const div = document.querySelector('.card-game__cards-list')
-  div.scrollBy(-400, 0, 'smooth')
+  console.log(div.scrollLeft)
+  if (!isMobileDevice()) {
+    div.scrollBy(-400, 0, 'smooth')
+  }
   if (div.scrollLeft <= 400) hideElement('leftButton')
   else showElement('leftButton')
 }
 
 function rightScroll () {
   const div = document.querySelector('.card-game__cards-list')
-  div.scrollBy(400, 0, 'smooth')
+  console.log(div.scrollLeft)
+
+  if (!isMobileDevice()) {
+    div.scrollBy(400, 0, 'smooth')
+  }
+
   if (div.scrollLeft >= 0) showElement('leftButton')
   else hideElement('leftButton')
 }
@@ -150,4 +158,11 @@ function hideElement (buttonId) {
 function showElement (buttonId) {
   var element = document.getElementById(buttonId)
   element.style.display = 'block'
+}
+
+function isMobileDevice () {
+  return (
+    typeof window.orientation !== 'undefined' ||
+    navigator.userAgent.indexOf('IEMobile') !== -1
+  )
 }
