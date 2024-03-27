@@ -79,7 +79,7 @@ function createHtml(features,products,commonFeatures){
 }
 
 function createPlanHtml(index,product,commonFeatures){
-    console
+    
     const features=getValuesNotInArray(product.features,commonFeatures);
     var html="<div class='cHQdJ'><label class='sc-gwZsXD gcIrqH' style='height: 100%;'><div class='jlhVkr'>";
     html+='<span class="sc-jjgyjb hemwwv">'+product.name+'</span>';
