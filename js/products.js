@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         (a, b) => a.prices.recurringFee - b.prices.recurringFee,
                     );
                     const products= JSON.stringify(sortedProducts, null, 2);
-                    console.log(products)
                     const arraysOfFeatures = data.map(obj => obj.features);
 
                     const commonFeatures = findCommonFeatures(arraysOfFeatures);
@@ -79,7 +78,7 @@ function createHtml(features,products,commonFeatures){
 }
 
 function createPlanHtml(index,product,commonFeatures){
-    
+    console.log(product)
     const features=getValuesNotInArray(product.features,commonFeatures);
     var html="<div class='cHQdJ'><label class='sc-gwZsXD gcIrqH' style='height: 100%;'><div class='jlhVkr'>";
     html+='<span class="sc-jjgyjb hemwwv">'+product.name+'</span>';
@@ -90,7 +89,7 @@ function createPlanHtml(index,product,commonFeatures){
     const featureString=index===0? commonFeatures.map(feature=>buildLiField(feature)): features.map(feature=>buildLiField(feature))
     html+=featureString.join('');
     
-    html+='</div><a href="https://signup.evertransit.com/" class="button-fluid-2 medium w-inline-block"><div class="button-text-2">Get started</div></a></label></div>';
+    html+='</div><a href="https://signup.evertransit.com/product-id='+product.id +'"  class="button-fluid-2 medium w-inline-block" target="_blank"><div class="button-text-2">Get started</div></a></label></div>';
     return html;
 
 }
