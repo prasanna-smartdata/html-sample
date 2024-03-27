@@ -72,11 +72,11 @@ function createHtml (features, products, commonFeatures) {
   var html = "<div class='pricing-table-wrapper flex-container'>"
 
   html +=
-    '<div class="card-game__cards"><button class="left scrollbutton" id="leftButton" onclick="leftScroll()">&lt;</button><ul class="card-game__cards-list">' +
+    '<div class="card-game__cards"><button class="left scrollbutton" id="leftButton" onclick="leftScroll(event)">&lt;</button><ul class="card-game__cards-list">' +
     products
       .map((product, index) => createPlanHtml(index, product, commonFeatures))
       .join('') +
-    '</ul> <button class="right scrollbutton" id="rightButton" onclick="rightScroll()">&gt;</button></div>'
+    '</ul> <button class="right scrollbutton" id="rightButton" onclick="rightScroll(event);">&gt;</button></div>'
   var endHtml = html + '</div>'
   return endHtml
 }
@@ -129,16 +129,24 @@ function buildLiField (liText) {
   )
 }
 
-function leftScroll () {
+function leftScroll (event) {
   const div = document.querySelector('.card-game__cards-list')
-  div.scrollBy(-400, 0, 'smooth')
-  if (div.scrollLeft <= 400) hideElement('leftButton')
-  else showElement('leftButton')
+  if (!isMobileDevice()) {
+    div.scrollBy(-400, 0, 'smooth')
+    if (div.scrollLeft <= 400) hideElement('leftButton')
+    else showElement('leftButton')
+  } else {
+    swipe(event, 'right')
+  }
 }
 
-function rightScroll () {
+function rightScroll (event) {
   const div = document.querySelector('.card-game__cards-list')
-  div.scrollBy(400, 0, 'smooth')
+  if (!isMobileDevice()) {
+    div.scrollBy(400, 0, 'smooth')
+  } else {
+    swipe(event, 'left')
+  }
   if (div.scrollLeft >= 0) showElement('leftButton')
   else hideElement('leftButton')
 }
@@ -150,4 +158,29 @@ function hideElement (buttonId) {
 function showElement (buttonId) {
   var element = document.getElementById(buttonId)
   element.style.display = 'block'
+}
+
+function isMobileDevice () {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+}
+
+var ImageIndex = 0
+function swipe (event, direction) {
+  if (!isMobileDevice()) return
+  var midpoint = Math.floor(screen.width / 2)
+  var px = event.pageX
+  var items = document.getElementsByClassName('cHQdJ')
+  var itemActive = items[ImageIndex]
+  if (direction === 'left') {
+    if (ImageIndex == items.length - 1) return
+    itemActive.style.marginLeft = '-92%'
+    itemActive.style.transition = '1s '
+    ImageIndex = ImageIndex < items.length - 1 ? ImageIndex + 1 : ImageIndex
+  } else {
+    itemActive.style.marginLeft = '0'
+    itemActive.style.transition = '1s '
+    ImageIndex = ImageIndex >= 1 ? ImageIndex - 1 : 0
+  }
 }

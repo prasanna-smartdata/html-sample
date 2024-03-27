@@ -145,8 +145,8 @@ label {
     scroll-behavior: smooth;
     list-style: none;
     padding: 0px;
-    margin-left: 4rem;
-    margin-right: 4.5rem;
+    /* margin-left: 4rem;
+    margin-right: 4.5rem; */
 }
 .features
 {
