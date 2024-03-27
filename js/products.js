@@ -134,6 +134,8 @@ function leftScroll () {
   console.log(div.scrollLeft)
   if (!isMobileDevice()) {
     div.scrollBy(-400, 0, 'smooth')
+  } else {
+    div.scrollBy(-325, 0, 'smooth')
   }
   if (div.scrollLeft <= 400) hideElement('leftButton')
   else showElement('leftButton')
@@ -145,6 +147,8 @@ function rightScroll () {
 
   if (!isMobileDevice()) {
     div.scrollBy(400, 0, 'smooth')
+  } else {
+    div.scrollBy(325, 0, 'smooth')
   }
 
   if (div.scrollLeft >= 0) showElement('leftButton')
