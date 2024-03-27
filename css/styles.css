@@ -44,7 +44,7 @@
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom:5px;
 }
 
 
@@ -137,7 +137,7 @@ label {
 
 .card-game__cards ul.card-game__cards-list {
     display: flex;
-    width: 90%;   
+    width: 92%;   
     flex-wrap: nowrap;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -145,4 +145,15 @@ label {
     list-style: none;
     padding: 0px;
     margin-left: 4rem;
+}
+.features
+{
+    font-weight: bold;
+    font-size: 24px;
+    padding:4px 0px;
+}
+
+.features-text
+{
+   margin-bottom: 12px;
 }
