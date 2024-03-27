@@ -111,10 +111,12 @@ svg:not(:root) {
 
 .button-fluid-2 , .medium.button-fluid-2{
     margin-right: auto;
-    width: 95% !important;
+    width: 96% !important;
 }
 
-
+.fJlsIf {
+    font-size: 14px;
+}
 .card-game__cards .scrollbutton {
     background-color: transparent;   
     position: absolute;
