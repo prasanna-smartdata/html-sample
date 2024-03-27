@@ -101,6 +101,8 @@ svg:not(:root) {
     overflow: hidden;
     display: flex;
     position: relative;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 .pricing-2{
     min-width: 20% !important;
@@ -122,7 +124,7 @@ label {
 .fJlsIf {
     font-size: 14px;
 }
-.card-game__cards .scrollbutton {
+.scrollbutton {
     background-color: transparent;   
     position: absolute;
     top: 50%;

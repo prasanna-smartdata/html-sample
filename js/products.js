@@ -69,14 +69,17 @@ function findCommonFeatures (arrays) {
   })
 }
 function createHtml (features, products, commonFeatures) {
-  var html = "<div class='pricing-table-wrapper flex-container'>"
+  var html =
+    "<div class='pricing-table-wrapper flex-container'><button class='left scrollbutton' id='leftButton' onclick='leftScroll()'>&lt;</button>"
   html +=
-    '<div class="card-game__cards"><button class="left scrollbutton" id="leftButton" onclick="leftScroll()">&lt;</button><ul class="card-game__cards-list">' +
+    '<div class="card-game__cards"><ul class="card-game__cards-list">' +
     products
       .map((product, index) => createPlanHtml(index, product, commonFeatures))
       .join('') +
-    '</ul> <button class="right scrollbutton" id="rightButton" onclick="rightScroll()">&gt;</button></div>'
-  var endHtml = html + '</div>'
+    '</ul> </div>'
+  var endHtml =
+    html +
+    '<button class="right scrollbutton" id="rightButton" onclick="rightScroll()">&gt;</button></div>'
   return endHtml
 }
 
