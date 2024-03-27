@@ -124,7 +124,7 @@ label {
 .fJlsIf {
     font-size: 14px;
 }
-.scrollbutton {
+.flex-container .scrollbutton {
     background-color: transparent;   
     position: absolute;
     top: 50%;
