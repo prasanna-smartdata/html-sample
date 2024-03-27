@@ -33,9 +33,10 @@
 }
 .hemwwv {
     font-size: 18px;
-    font-weight: normal !important;
+    font-weight:normal !important;
     text-transform: capitalize;
     margin-bottom: 12px;
+    color: 73AD21;
 }
 
 .dyJMbD {
@@ -156,4 +157,8 @@ label {
 .features-text
 {
    margin-bottom: 12px;
+}
+.horizontal-line {
+    border-top: 2px solid #73AD21; /* Adjust color and thickness as needed */
+    margin: 10px 0; /* Adjust margin as needed */
 }
